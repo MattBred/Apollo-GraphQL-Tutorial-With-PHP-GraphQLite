@@ -90,6 +90,9 @@
     "mouf/classname-mapper": {
         "version": "v1.0.2"
     },
+    "myclabs/php-enum": {
+        "version": "1.7.6"
+    },
     "nikic/php-parser": {
         "version": "v4.9.1"
     },
@@ -246,6 +249,12 @@
             "src/Controller/.gitignore",
             "src/Kernel.php"
         ]
+    },
+    "symfony/http-client": {
+        "version": "v5.1.5"
+    },
+    "symfony/http-client-contracts": {
+        "version": "v2.2.0"
     },
     "symfony/http-foundation": {
         "version": "v5.1.5"

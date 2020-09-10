@@ -1,6 +1,6 @@
 # Read more about GraphQLite available options at: https://graphqlite.thecodingmachine.io/docs/symfony-bundle
 graphqlite:
   namespace:
-    controllers: App\Resolver\
+    controllers: App\Controller\
     types:
       - App\Type\
