@@ -13,11 +13,31 @@ class TripUpdateResponseType
 {
 
 	/**
+	 * @var bool
+	 */
+	protected $success;
+	/**
+	 * @var string
+	 */
+	protected $message;
+	/**
+	 * @var array
+	 */
+	protected $launches;
+
+	public function __construct(bool $success, string $message, array $launches = [])
+	{
+		$this->success = $success;
+		$this->message = $message;
+		$this->launches = $launches;
+	}
+
+	/**
 	 * @Field
 	 */
 	public function getSuccess(): bool
 	{
-
+		return $this->success;
 	}
 
 	/**
@@ -25,7 +45,7 @@ class TripUpdateResponseType
 	 */
 	public function getMessage(): ?string
 	{
-
+		return $this->message;
 	}
 
 	/**
@@ -34,6 +54,6 @@ class TripUpdateResponseType
 	 */
 	public function getLaunches(): array
 	{
-
+		return $this->launches;
 	}
 }

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TripRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=TripRepository::class)
@@ -28,7 +29,7 @@ class Trip
      */
     private $launchId;
 
-    public function __construct(User $user, int $launchId)
+    public function __construct(UserInterface $user, int $launchId)
 	 {
 	 	$this->user = $user;
 	 	$this->launchId = $launchId;
@@ -39,7 +40,7 @@ class Trip
         return $this->id;
     }
 
-    public function getUser(): ?User
+    public function getUser(): ?UserInterface
     {
         return $this->user;
     }
