@@ -1,0 +1,85 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+interface SymfonyUserInterface {
+    roles: [String!]!
+    """
+
+    Returns the username used to authenticate the user.
+    """
+    userName: String!
+}
+
+type Launch {
+    id: ID!
+    isBooked: Boolean!
+    mission: Mission
+    rocket: Rocket
+    site: String
+}
+
+type LaunchConnectionType {
+    cursor: String
+    hasMore: Boolean!
+    launches: [Launch!]!
+}
+
+type Mission {
+    missionPatch(size: PatchSizeEnum!): String
+    name: String
+}
+
+type Mutation {
+    bookTrips(launchIds: [ID!]!): TripUpdateResponse!
+    cancelTrip(launchId: ID!): TripUpdateResponse!
+    login(password: String!, userName: String!): SymfonyUserInterface!
+    logout: Boolean!
+}
+
+type Query {
+    launch(id: ID!): Launch!
+    launches(after: String, pageSize: Int = 20): LaunchConnectionType!
+    me: SymfonyUserInterface
+    user(id: ID!): User
+}
+
+type Rocket {
+    id: ID!
+    name: String
+    type: String
+}
+
+type SymfonyUserImpl implements SymfonyUserInterface {
+    roles: [String!]!
+    """
+
+    Returns the username used to authenticate the user.
+    """
+    userName: String!
+}
+
+type TripUpdateResponse {
+    launches: [Launch!]!
+    message: String
+    success: Boolean!
+}
+
+type User {
+    """
+
+    Get the user's email.
+    """
+    email: String!
+    roles: [String!]!
+    trips: [Launch!]!
+    username: String!
+}
+
+enum PatchSizeEnum {
+    LARGE
+    SMALL
+}
