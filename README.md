@@ -11,6 +11,25 @@ The app is split out into two folders:
 From within the `start` and `final` directories, there are two folders (one for `server` and one for `client`).
 
 ## Installation
+### Starting Out
+To run the app for development, run these commands in two separate terminal windows from the root:
+```bash
+cd start/server && \
+  composer install && \
+  bin/console doctrine:migrations:migrate --no-interaction && \
+  bin/console app:create-user example@example.com password && \
+  symfony serve
+```
+
+and
+
+
+```bash
+cd start/client && npm i && npm start
+```
+
+
+### Finished App
 
 To run the app, run these commands in two separate terminal windows from the root:
 
