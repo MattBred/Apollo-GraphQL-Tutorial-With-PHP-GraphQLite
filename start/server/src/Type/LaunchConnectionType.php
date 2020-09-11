@@ -24,7 +24,7 @@ class LaunchConnectionType
 	 */
 	protected $launches;
 
-	public function __construct(string $cursor, bool $hasMore, array $launches)
+	public function __construct(?string $cursor, bool $hasMore, array $launches)
 	{
 		$this->cursor = $cursor;
 		$this->hasMore = $hasMore;
@@ -34,7 +34,7 @@ class LaunchConnectionType
 	/**
 	 * @Field
 	 */
-	public function getCursor(): String
+	public function getCursor(): ?String
 	{
 		return $this->cursor;
 	}

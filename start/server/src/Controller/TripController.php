@@ -4,14 +4,12 @@ namespace App\Controller;
 
 use App\Api\LaunchApi;
 use App\Entity\Trip;
-use App\Type\LaunchType;
 use App\Type\TripUpdateResponseType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use TheCodingMachine\GraphQLite\Annotations\Autowire;
 use TheCodingMachine\GraphQLite\Annotations\InjectUser;
 use TheCodingMachine\GraphQLite\Annotations\Mutation;
-use TheCodingMachine\GraphQLite\Annotations\Query;
 use TheCodingMachine\GraphQLite\Types\ID;
 
 class TripController

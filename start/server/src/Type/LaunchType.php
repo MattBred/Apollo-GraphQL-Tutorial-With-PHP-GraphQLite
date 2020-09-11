@@ -3,6 +3,7 @@
 namespace App\Type;
 
 use App\Entity\User;
+use App\Pagination\PaginatibleByCursorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use TheCodingMachine\GraphQLite\Annotations\Autowire;
@@ -14,7 +15,7 @@ use TheCodingMachine\GraphQLite\Types\ID;
 /**
  * @Type(name="Launch")
  */
-class LaunchType
+class LaunchType implements PaginatibleByCursorInterface
 {
 
 	/**
@@ -82,7 +83,7 @@ class LaunchType
 	{
 		return $this->rocket;
 	}
-	
+
 	public function getCursor(): string
 	{
 		return $this->cursor;

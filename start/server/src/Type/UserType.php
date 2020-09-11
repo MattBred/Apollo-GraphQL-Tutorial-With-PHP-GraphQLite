@@ -27,7 +27,7 @@ class UserType implements EntityType
 	 * Get the user's email.
 	 *
 	 * @Field
-	 * 
+	 *
 	 * @return string
 	 */
 	public function getEmail(): string
@@ -45,7 +45,7 @@ class UserType implements EntityType
 
 	/**
 	 * @Field
-	 * 
+	 *
 	 * @return string[]
 	 */
 	public function getRoles(): array

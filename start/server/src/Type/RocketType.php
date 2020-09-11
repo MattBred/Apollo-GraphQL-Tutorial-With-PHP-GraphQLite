@@ -8,7 +8,7 @@ use TheCodingMachine\GraphQLite\Types\ID;
 
 /**
  * @Type(name="Rocket")
- * 
+ *
  */
 class RocketType
 {

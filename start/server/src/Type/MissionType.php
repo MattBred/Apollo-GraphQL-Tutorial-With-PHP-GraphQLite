@@ -16,9 +16,9 @@ class MissionType
 	 * @var string|null
 	 */
 	protected $name;
-	
+
 	protected $missionPatchSmall;
-	
+
 	protected $missionPatchLarge;
 
 	public function __construct(string $name = null, string $missionPatchSmall = null, string $missionPatchLarge = null)

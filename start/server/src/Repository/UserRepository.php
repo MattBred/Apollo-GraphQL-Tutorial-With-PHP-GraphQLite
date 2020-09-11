@@ -21,10 +21,18 @@ class UserRepository extends ServiceEntityRepository
 		parent::__construct($registry, User::class);
 	}
 
+	/**
+	 * Checks if the user is booked on a specific launch.
+	 *
+	 * @param UserInterface $user
+	 * @param int $launchId
+	 *
+	 * @return bool
+	 */
 	public function isBookedOnLaunch(UserInterface $user, int $launchId)
 	{
 		return !empty(
-			$this->_em->createQueryBuilder()
+		$this->_em->createQueryBuilder()
 			->select('t')
 			->from(Trip::class, 't')
 			->andWhere('t.launchId = :launchId')
@@ -35,15 +43,22 @@ class UserRepository extends ServiceEntityRepository
 			->getArrayResult()
 		);
 	}
-	
+
+	/**
+	 * Gets all launch ids from the user's booked trips.
+	 *
+	 * @param UserInterface $user
+	 *
+	 * @return array
+	 */
 	public function getLaunchIdsByUser(UserInterface $user)
 	{
-		return $this->_em->createQueryBuilder()
+		return array_column($this->_em->createQueryBuilder()
 			->select('t.launchId')
 			->from(Trip::class, 't')
 			->andWhere('t.user = :user')
 			->setParameter('user', $user)
 			->getQuery()
-			->getArrayResult();
+			->getResult(), "launchId");
 	}
 }

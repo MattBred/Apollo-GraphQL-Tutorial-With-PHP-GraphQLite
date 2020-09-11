@@ -2,7 +2,6 @@
 
 namespace App\Type;
 
-use App\Enum\PatchSizeEnum;
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Type;
 

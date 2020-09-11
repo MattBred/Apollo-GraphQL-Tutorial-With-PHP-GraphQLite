@@ -11,56 +11,56 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class Trip
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+	/**
+	 * @ORM\Id
+	 * @ORM\GeneratedValue
+	 * @ORM\Column(type="integer")
+	 */
+	private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="trips")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
+	/**
+	 * @ORM\ManyToOne(targetEntity=User::class, inversedBy="trips")
+	 * @ORM\JoinColumn(nullable=false)
+	 */
+	private $user;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $launchId;
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $launchId;
 
-    public function __construct(UserInterface $user, int $launchId)
-	 {
-	 	$this->user = $user;
-	 	$this->launchId = $launchId;
-	 }
+	public function __construct(UserInterface $user, int $launchId)
+	{
+		$this->user = $user;
+		$this->launchId = $launchId;
+	}
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+	public function getId(): ?int
+	{
+		return $this->id;
+	}
 
-    public function getUser(): ?UserInterface
-    {
-        return $this->user;
-    }
+	public function getUser(): ?UserInterface
+	{
+		return $this->user;
+	}
 
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
+	public function setUser(?User $user): self
+	{
+		$this->user = $user;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    public function getLaunchId(): ?int
-    {
-        return $this->launchId;
-    }
+	public function getLaunchId(): ?int
+	{
+		return $this->launchId;
+	}
 
-    public function setLaunchId(int $launchId): self
-    {
-        $this->launchId = $launchId;
+	public function setLaunchId(int $launchId): self
+	{
+		$this->launchId = $launchId;
 
-        return $this;
-    }
+		return $this;
+	}
 }

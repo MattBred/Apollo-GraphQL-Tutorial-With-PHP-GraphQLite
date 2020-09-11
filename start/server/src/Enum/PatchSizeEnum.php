@@ -10,9 +10,6 @@ use MyCLabs\Enum\Enum;
  */
 class PatchSizeEnum extends Enum
 {
-	
 	private const SMALL = "SMALL";
-	
 	private const LARGE = "LARGE";
-
 }
